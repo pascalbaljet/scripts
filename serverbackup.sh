@@ -19,11 +19,11 @@ dpkg --get-selections > $backup_destination/Package.list
 
 # Backup the sources lists
 echo Backing up the sources lists...
-sudo cp -R /etc/apt/sources.list* $backup_destination/sources-lists/
+cp -R /etc/apt/sources.list* $backup_destination/sources-lists/
 
 # Backup an export of all trusted keys
 echo Backing up all trusted keys...
-sudo apt-key exportall > $backup_destination/Repo.keys
+apt-key exportall > $backup_destination/Repo.keys
 
 # Sync my homefolder
 echo Syncing the homefolder of "$user_to_backup"...
@@ -31,4 +31,4 @@ rsync -aAX /home/$user_to_backup $backup_destination/profile
 
 # Sync /etc
 echo Syncing the /etc folder
-sudo rsync -aAX /etc $backup_destination
+rsync -aAX /etc $backup_destination
