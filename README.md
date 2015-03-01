@@ -9,3 +9,7 @@ Some scripts I want to share with the rest of the world because open source.
 - Backups all trusted keys (apt-get)
 - Backups a specified home folder
 - Tested on Ubuntu Server 14.04
+
+## backup-gitlab.sh
+- Creates a Gitlab backup
+- Untar the backup and delete the tar
